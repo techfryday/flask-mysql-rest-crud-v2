@@ -7,7 +7,7 @@ import re
 from configs.config import dbconfig
 from app import cursor
 
-class auth_model():
+class auth_helper():
         
     def token_auth(self, endpoint=""):
         def inner1(func):

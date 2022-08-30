@@ -3,14 +3,14 @@ import flask
 from flask import request, send_file
 from app import app
 from models.user_model import user_model
-from models.auth_model import auth_model
+from helpers.auth_helper import auth_helper
 import os
 from datetime import datetime
 obj = user_model()
-auth = auth_model()
+auth = auth_helper()
 
 @app.route("/user/all")
-# The endpoint for token_auth() is automatically getting calculated in the auth_model.token_auth() method
+# The endpoint for token_auth() is automatically getting calculated in the auth_helper.token_auth() method
 @auth.token_auth()
 def all_users():
     # res = flask.Response(obj.all_user_model())
